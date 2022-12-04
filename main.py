@@ -33,7 +33,7 @@ def api_search():
 
 @app.route('/', methods=['GET'])
 def say_hello():
-    return "Goliv api v.1.1.4 by Manhamprod"
+    return "Goliv api v.2.0.1 by Manhamprod"
 
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=8080, debug=True)
