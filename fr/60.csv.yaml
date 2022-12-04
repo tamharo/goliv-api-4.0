@@ -1,0 +1,3 @@
+# this file exists so that we know when not to do the
+# fr/60.csv → fr/60.csv.hdf5 conversion
+fingerprint: 85ca4558521437db26eab4775680a1e2

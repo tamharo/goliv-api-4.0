@@ -1,7 +1,6 @@
+from flask import request
 import re
-
 from spelling import speelingAbbre
-
 
 def formatReg(search):
 
@@ -14,18 +13,37 @@ def formatReg(search):
     return formatedReg
 
 
-def getPlace(zone, dv, search):
-    
-    reg = formatReg(search)
-    
+def getPlace(reg, dv):
     val = dv[dv.rue.str.contains(reg, regex=True)]
     
     gen = val.to_pandas_df(chunk_size=10)
-
-    count = 0
-    result = []
-
+    
     for i1, i2, chunk in gen:
         return chunk.values.tolist()
     
     return []
+        
+def getPlaceWithZone(reg, dv, city):
+
+    currentDv = dv[city]
+    
+    val = currentDv[currentDv.rue.str.contains(reg, regex=True)]
+    
+    gen = val.to_pandas_df(chunk_size=10)
+    
+    for i1, i2, chunk in gen:
+        return chunk.values.tolist()
+    
+    return []
+
+
+def search(dv_city, dv_all):
+    reg = formatReg(request.args['search'].upper())
+
+    search = getPlaceWithZone(reg, dv_city, request.args['city'])
+
+    if len(search) < 10:
+        search = getPlace(reg, dv_all)
+    
+
+    return search
