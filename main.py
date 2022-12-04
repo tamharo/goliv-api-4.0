@@ -14,7 +14,7 @@ def api_sorter():
 
 @app.route('/search', methods=['GET'])
 def api_search():
-    search = getPlace(request.args['city'], None, request.args['search'].upper())
+    search = getPlace(request.args['city'], dv, request.args['search'].upper())
     return search
 
 @app.route('/', methods=['GET'])
