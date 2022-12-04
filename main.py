@@ -6,7 +6,7 @@ import vaex
 
 app = Flask(__name__)
 
-dv = vaex.open(r'db/road.csv.hdf5')
+dv = vaex.open(r'db/road-fr.hdf5')
 
 @app.route('/sorter', methods=['GET'])
 def api_sorter():
