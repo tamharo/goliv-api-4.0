@@ -1,4 +1,5 @@
 flask==2.2.2
 honcho==1.1.0
 gunicorn==20.1.0
+pandas==1.5.2
 ortools
