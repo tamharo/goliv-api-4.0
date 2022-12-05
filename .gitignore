@@ -1,2 +1,5 @@
 *.sh
 config.txt
+.venv/
+__pycache__/
+pubspec.yaml
