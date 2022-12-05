@@ -2,6 +2,7 @@ from flask import Flask, request
 
 from search import search
 from sorter import sorter
+from compagny import initCompagnyMethod
 import vaex
 import os
 
@@ -31,9 +32,13 @@ def api_search():
     if(request.args['country'] == "fr"):
         return search(dv_zone_fr, dv)
 
+@app.route('/compagny', methods=['GET'])
+def api_compagny():
+    return initCompagnyMethod()
+
 @app.route('/', methods=['GET'])
 def say_hello():
-    return "Goliv api v.2.0.6 by Manhamprod"
+    return "Goliv api v.2.0.8 by Manhamprod"
 
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=8080, debug=True)

@@ -3,3 +3,8 @@ config.txt
 .venv/
 __pycache__/
 pubspec.yaml
+assets/
+compagny.py
+city.py
+compagny/fr/compagny.csv.hdf5
+compagny/fr/compagny.csv.yaml

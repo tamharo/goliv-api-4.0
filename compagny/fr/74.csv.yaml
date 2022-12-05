@@ -1,0 +1,3 @@
+# this file exists so that we know when not to do the
+# compagny/fr/74.csv → compagny/fr/74.csv.hdf5 conversion
+fingerprint: 478b5d9b1c09b0437a203a558dfb8707
